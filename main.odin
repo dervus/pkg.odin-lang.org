@@ -953,6 +953,9 @@ write_type :: proc(using writer: ^Type_Writer, type: doc.Type, flags: Write_Type
 		}
 
 		for flag in e.flags {
+			if .Param_Ellipsis in flag {
+				continue
+			}
 			if str := entity_flag_strings[flag]; str != "" {
 				io.write_string(w, `<span class="keyword-type">`)
 				io.write_string(w, str)
