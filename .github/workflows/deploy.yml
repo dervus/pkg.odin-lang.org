@@ -52,7 +52,6 @@ jobs:
           odin doc core/sys/darwin                   -all-packages -doc-format -show-debug-messages -target:darwin_arm64
           odin doc core/sys/freebsd                  -all-packages -doc-format -show-debug-messages -target:freebsd_amd64
           odin doc core/sys/unix                     -all-packages -doc-format -show-debug-messages -target:linux_amd64
-          odin doc core/sys/haiku                    -all-packages -doc-format -show-debug-messages -target:haiku_amd64
       - name: Generate Tool
         shell: cmd
         run: |
@@ -66,7 +65,7 @@ jobs:
           copy resources\CNAME       website\static\CNAME
           copy resources\favicon.svg website\static\favicon.svg
           pushd website\static
-          ..\odin-html-docs.exe ..\all.odin-doc --merge ..\darwin.odin-doc ..\all_posix.odin-doc ..\freebsd.odin-doc ..\all_linux.odin-doc ..\unix.odin-doc ..\haiku.odin-doc ..\sdl3.odin-doc ..\all_js.odin-doc
+          ..\odin-html-docs.exe ..\all.odin-doc --merge ..\darwin.odin-doc ..\all_posix.odin-doc ..\freebsd.odin-doc ..\all_linux.odin-doc ..\unix.odin-doc ..\sdl3.odin-doc ..\all_js.odin-doc
           popd
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4

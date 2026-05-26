@@ -683,8 +683,6 @@ target_from_pkg :: proc(pkg: ^doc.Pkg) -> (target: string, ok: bool) {
 			target = "darwin_arm64"
 		case "linux", "unix":
 			target = "linux_arm64"
-		case "haiku":
-			target = "haiku_arm64"
 		case "freebsd":
 			target = "freebsd_amd64"
 		case "wasm/js", "wasm/wasi":
@@ -3187,8 +3185,6 @@ write_pkg :: proc(w: io.Writer, dir, path: string, pkg: ^doc.Pkg, collection: ^C
 		case
 			strings.has_suffix(filename, "_windows.odin"),
 			strings.has_suffix(filename, "_darwin.odin"),
-			strings.has_suffix(filename, "_essence.odin"),
-			strings.has_suffix(filename, "_haiku.odin"),
 			strings.has_suffix(filename, "_freebsd.odin"),
 			strings.has_suffix(filename, "_wasi.odin"),
 			strings.has_suffix(filename, "_js.odin"),
