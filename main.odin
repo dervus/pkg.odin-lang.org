@@ -953,7 +953,7 @@ write_type :: proc(using writer: ^Type_Writer, type: doc.Type, flags: Write_Type
 		}
 
 		for flag in e.flags {
-			if .Param_Ellipsis in flag {
+			if .Param_Ellipsis == flag {
 				continue
 			}
 			if str := entity_flag_strings[flag]; str != "" {
